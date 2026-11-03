@@ -9,7 +9,7 @@ export default function Products() {
   const content = {
     FR: {
       home: "Accueil",
-      about: "À propos",
+      //about: "À propos",
       products: "Nos produits",
       services: "Nos services",
       contact: "Contact",
@@ -110,7 +110,7 @@ export default function Products() {
     },
     EN: {
       home: "Home",
-      about: "About us",
+      //about: "About us",
       products: "Our products",
       services: "Our services",
       contact: "Contact",
@@ -434,7 +434,7 @@ export default function Products() {
             <img
               src="/images/PWS.png"
               alt="Premium World Services"
-              className="h-14 w-auto max-w-[220px] object-contain sm:h-16 sm:max-w-[260px] lg:h-20 lg:max-w-[300px]"
+              className="h-16 w-auto max-w-[240px] object-contain sm:h-20 sm:max-w-[300px] lg:h-24 lg:max-w-[340px]"
             />
           </Link>
 
@@ -445,12 +445,13 @@ export default function Products() {
             >
               {t.home}
             </Link>
-            <Link
+ {/* }           <Link
               to="/about"
               className="text-sm font-medium text-slate-600 transition hover:text-blue-900"
             >
               {t.about}
             </Link>
+*/}
             <Link
               to="/products"
               className="border-b-2 border-amber-400 py-2 text-sm font-bold text-blue-950"
@@ -861,18 +862,24 @@ export default function Products() {
       <footer className="bg-slate-950 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-3 lg:px-8">
           <div>
-            <Link
-              to="/"
-              className="inline-flex items-center"
-              aria-label="Premium World Services - Accueil"
-            >
-              <img
-                src="/images/PWS.png"
-                alt="Premium World Services"
-                className="h-16 w-auto max-w-[240px] object-contain sm:h-20 sm:max-w-[280px]"
-                loading="lazy"
-              />
-            </Link>
+            <a href="#accueil" className="inline-flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center bg-blue-900 font-bold text-amber-400">
+                <img
+                  src="/images/PWS.png"
+                  alt="Premium World Services"
+                />
+              </div>
+               
+
+              <div>
+                <p className="text-sm font-bold tracking-wider">
+                  PREMIUM WORLD
+                </p>
+                <p className="text-xs tracking-[0.2em] text-slate-400">
+                  SERVICES
+                </p>
+              </div>
+            </a>
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
               {t.footerDescription}
             </p>

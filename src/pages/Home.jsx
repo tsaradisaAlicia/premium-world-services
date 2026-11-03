@@ -7,7 +7,7 @@ export default function Home() {
   const content = {
     FR: {
       home: "Accueil",
-      about: "À propos",
+      //about: "À propos",
       products: "Nos produits",
       services: "Nos services",
       contact: "Contact",
@@ -64,7 +64,7 @@ export default function Home() {
     },
     EN: {
       home: "Home",
-      about: "About us",
+      //about: "About us",
       products: "Our products",
       services: "Our services",
       contact: "Contact",
@@ -127,24 +127,19 @@ export default function Home() {
     {
       title: t.vanilla,
       description: t.vanillaText,
-      image:
-        "https://images.unsplash.com/photo-1599909533605-2f7b5d4d1b5a?auto=format&fit=crop&w=900&q=85",
-      fallback:
-        "images/vanille.jpg", // Fallback image in case the main image fails to load
+      image: "/images/vanille-home.jpg",
       number: "01",
     },
     {
       title: t.grains,
       description: t.grainsText,
-      image:
-        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=900&q=85",
+      image: "/images/pois-home.jpg",
       number: "02",
     },
     {
       title: t.spices,
       description: t.spicesText,
-      image:
-        "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=900&q=85",
+      image: "/images/graines-home.jpg",
       number: "03",
     },
   ];
@@ -194,22 +189,13 @@ export default function Home() {
             className="flex shrink-0 items-center"
             aria-label="Premium World Services - Accueil"
             >
-           
+           <div className="flex h-20 max-w-[260px] items-center justify-center bg-blue-900 font-bold text-amber-400">
             <img
               src="/images/PWS.png"
               alt="Premium World Services"
               className="h-16 w-auto max-w-[240px] object-contain sm:h-20 sm:max-w-[300px] lg:h-24 lg:max-w-[340px]"
             />
-
-
-            <div>
-              <p className="text-sm font-bold tracking-wider text-blue-950 sm:text-base">
-                PREMIUM WORLD
-              </p>
-              <p className="text-sm font-bold tracking-wider text-blue-950">
-                SERVICES
-              </p>
-            </div>
+          </div>
           </a>
 
           <nav className="hidden items-center gap-7 lg:flex">
@@ -313,8 +299,7 @@ export default function Home() {
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=2000&q=85')",
+              backgroundImage: "url('/images/export.jpg')",
             }}
           />
 
@@ -345,13 +330,14 @@ export default function Home() {
                   {t.discover}
                   <span aria-hidden="true">→</span>
                 </a>
-
+{/*
                 <a
                   href="#apropos"
                   className="inline-flex items-center justify-center border border-white/60 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white hover:text-blue-950"
                 >
                   {t.learnMore}
                 </a>
+*/}
               </div>
 
               <div className="mt-14 flex items-center gap-4 border-t border-white/20 pt-6">
@@ -367,12 +353,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* INTRODUCTION */}
+     {/* INTRODUCTION */}
         <section id="apropos" className="py-20 sm:py-28">
           <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=1100&q=85"
+                src="/images/exportation.jpg"
                 alt={
                   language === "FR"
                     ? "Paysage naturel et agricole"
@@ -415,6 +401,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* PRODUCTS */}
         <section id="produits" className="bg-slate-50 py-20 sm:py-28">
@@ -561,8 +548,12 @@ export default function Home() {
           <div>
             <a href="#accueil" className="inline-flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center bg-blue-900 font-bold text-amber-400">
-                PWS
+                <img
+                  src="/images/PWS.png"
+                  alt="Premium World Services"
+                />
               </div>
+               
 
               <div>
                 <p className="text-sm font-bold tracking-wider">
