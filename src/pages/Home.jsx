@@ -32,7 +32,7 @@ export default function Home() {
       grains: "Pois du cap",
       grainsText:
         "Des produits agricoles sélectionnés selon les disponibilités et les besoins de nos partenaires.",
-      spices: "Grains agricoles",
+      spices: "Epices et produits agricoles",
       spicesText:
         "Une sélection de produits issus du secteur agricole, adaptée aux demandes de nos clients.",
       details: "En savoir plus",
@@ -89,7 +89,7 @@ export default function Home() {
       grains: "Agricultural Grains",
       grainsText:
         "Agricultural products selected according to availability and our partners' needs.",
-      spices: "Agricultural Products",
+      spices: "spices and agricultural products",
       spicesText:
         "A selection of agricultural products tailored to our customers' requirements.",
       details: "Learn more",
