@@ -139,7 +139,7 @@ export default function Home() {
     {
       title: t.spices,
       description: t.spicesText,
-      image: "/images/graines-home.jpg",
+      image: "/images/anis.jpg",
       number: "03",
     },
   ];

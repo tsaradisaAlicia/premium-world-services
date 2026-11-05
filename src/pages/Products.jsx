@@ -35,13 +35,13 @@ export default function Products() {
       capPeasDescription:
         "Un produit agricole destiné aux échanges commerciaux. Les disponibilités et les spécifications peuvent être étudiées selon votre demande.",
       capPeasTag: "Légumineuse",
-      grains: "Autres grains agricoles",
-      grainsDescription:
+      anis: "Anis étoilé",
+      anisDescription:
         "Une sélection de produits agricoles à définir selon les besoins de nos partenaires et les disponibilités.",
-      grainsTag: "Produits agricoles",
+      anisTag: "Produits agricoles",
       vanillaMenu: "Vanille",
       peasMenu: "Pois du Cap",
-      grainsMenu: "Autres grains agricoles",
+      anisMenu: "Anis étoilé",
       vanillaName14: "Vanille Grade A Gourmet",
       vanillaName16: "Vanille Grade B Gourmet",
       vanillaName18: "Vanille Grade C Gourmet",
@@ -136,13 +136,13 @@ export default function Products() {
       capPeasDescription:
         "An agricultural product intended for commercial trade. Availability and specifications can be discussed according to your requirements.",
       capPeasTag: "Legume",
-      grains: "Other Agricultural Grains",
-      grainsDescription:
+      anis: "Star Anise",
+      anisDescription:
         "A selection of agricultural products to be defined according to our partners' needs and availability.",
-      grainsTag: "Agricultural Products",
+      anisTag: "Agricultural Products",
       vanillaMenu: "Vanilla",
       peasMenu: "Cape Peas",
-      grainsMenu: "Other Agricultural Grains",
+      anisMenu: "Star Anise",
       vanillaName14: "Vanilla Grade A Gourmet",
       vanillaName16: "Vanilla Grade B Gourmet",
       vanillaName18: "Vanilla Grade C Gourmet",
@@ -378,12 +378,12 @@ export default function Products() {
     },
     {
       id: "03",
-      categoryId: "autres-grains",
-      name: t.grains,
-      category: t.grainsTag,
-      description: [t.grainsDescription],
+      categoryId: "anis",
+      name: t.anis,
+      category: t.anisTag,
+      description: [t.anisDescription],
       image:
-        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1000&q=85",
+        "/images/anis-etoile3.jpg",
     },
   ];
 
@@ -414,7 +414,7 @@ export default function Products() {
   const menus = [
     { id: "vanille", label: t.vanillaMenu },
     { id: "pois-cap", label: t.peasMenu },
-    { id: "autres-grains", label: t.grainsMenu },
+    { id: "anis", label: t.anisMenu },
   ];
 
   const selectedProducts = products.filter(
@@ -530,7 +530,7 @@ export default function Products() {
             
 
             {/* MENUS DES PRODUITS — RESTENT VISIBLES AU DÉFILEMENT */}
-              <div className="sticky top-[88px] z-40 -mx-5 mt-10 border-b border-slate-200 bg-white/95 px-5 py-4 shadow-sm backdrop-blur lg:-mx-8 lg:px-8">
+              <div className="sticky top-[120px] z-40 -mx-5 mt-10 border-b border-slate-200 bg-white/95 px-5 py-4 shadow-sm backdrop-blur lg:-mx-8 lg:px-8">
                 <div className="flex flex-wrap justify-center gap-3">
                   {menus.map((menu) => (
                     <button
@@ -705,6 +705,155 @@ export default function Products() {
                     {language === "FR"
                       ? "Les valeurs indiquées sont données à titre indicatif pour une qualité supérieure de Pois du Cap (Phaseolus lunatus L.) et peuvent varier selon la variété et la grosseur des graines."
                       : "The values shown are indicative for a superior quality of Cape Peas (Phaseolus lunatus L.) and may vary according to variety and seed size."}
+                  </p>
+                </div>
+              </section>
+            ) : selectedCategory === "anis" ? (
+              <section className="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+                {/* Présentation principale de l'anis étoilé */}
+                <div className="grid lg:grid-cols-2">
+                  <button
+                    type="button"
+                    onClick={() => setLightboxImage({
+                      src: "/images/anis-etoile3.jpg",
+                      alt: language === "FR" ? "Anis étoilé" : "Star anise"
+                    })}
+                    className="group relative block min-h-[300px] cursor-zoom-in overflow-hidden bg-slate-100 text-left lg:min-h-[480px]"
+                    aria-label={language === "FR" ? "Agrandir la photo de l'anis étoilé" : "Enlarge star anise photo"}
+                  >
+                    <img
+                      src="/images/anis-etoile3.jpg"
+                      alt={language === "FR" ? "Anis étoilé" : "Star anise"}
+                      className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <span className="absolute right-4 top-4 rounded-full bg-blue-950/85 px-4 py-2 text-xs font-bold text-white shadow">
+                      {language === "FR" ? "Cliquer pour agrandir ⤢" : "Click to enlarge ⤢"}
+                    </span>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/70 to-transparent p-6 sm:p-8">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/95 px-4 py-2 text-xs font-bold uppercase tracking-widest text-blue-950">
+                        <span className="h-2 w-2 rounded-full bg-amber-500" />
+                        {language === "FR" ? "Produit agricole" : "Agricultural product"}
+                      </span>
+                    </div>
+                  </button>
+
+                  <div className="flex flex-col justify-center px-6 py-9 sm:px-10 sm:py-12 lg:px-12">
+                    <p className="text-xs font-bold tracking-[0.25em] text-amber-600">
+                      {language === "FR" ? "ÉPICE — ANIS ÉTOILÉ" : "SPICE — STAR ANISE"}
+                    </p>
+                    <h2 className="mt-4 text-3xl font-bold leading-tight text-blue-950 sm:text-4xl">
+                      {language === "FR" ? "Anis étoilé" : "Star Anise"}
+                    </h2>
+                    <div className="mt-6 h-1 w-16 bg-amber-400" />
+                    <p className="mt-6 text-base leading-8 text-slate-600">
+                      {language === "FR"
+                        ? "L’anis étoilé est une épice reconnaissable à sa forme caractéristique en étoile et à son parfum aromatique. Premium World Services le présente dans sa sélection de produits agricoles destinée aux partenaires commerciaux et aux acheteurs internationaux."
+                        : "Star anise is a spice recognised by its distinctive star shape and aromatic fragrance. Premium World Services presents it as part of its agricultural product selection for business partners and international buyers."}
+                    </p>
+                    <p className="mt-4 text-base leading-8 text-slate-600">
+                      {language === "FR"
+                        ? "Il peut être utilisé pour apporter une note aromatique à différentes préparations culinaires et boissons. Les caractéristiques recherchées peuvent être précisées selon les besoins de chaque acheteur."
+                        : "It can be used to add an aromatic note to various culinary preparations and beverages. Desired product characteristics can be discussed according to each buyer’s requirements."}
+                    </p>
+                    <p className="mt-4 text-base leading-8 text-slate-600">
+                      {language === "FR"
+                        ? "Pour connaître les disponibilités, le conditionnement, les spécifications et les conditions commerciales, nous vous invitons à contacter notre équipe."
+                        : "For information about availability, packaging, specifications and commercial terms, please contact our team."}
+                    </p>
+                    <a
+                      href={`mailto:${email}?subject=${encodeURIComponent(language === "FR" ? "Demande d'informations - Anis étoilé" : "Product enquiry - Star Anise")}`}
+                      className="mt-8 inline-flex w-fit items-center justify-center gap-3 bg-amber-400 px-6 py-4 text-sm font-bold text-blue-950 transition hover:bg-amber-300"
+                    >
+                      {language === "FR" ? "Demander des informations" : "Request information"}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Galerie photo */}
+                <div className="border-t border-slate-200 px-6 py-8 sm:px-10">
+                  <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+                    {language === "FR" ? "Galerie photos" : "Photo gallery"}
+                  </p>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    {[
+                      {
+                        src: "/images/anis-etoile.jpg",
+                        alt: language === "FR" ? "Anis étoilé — vue détaillée" : "Star anise — detailed view"
+                      },
+                      {
+                        src: "/images/anis-etoile2.jpg",
+                        alt: language === "FR" ? "Anis étoilé — présentation du produit" : "Star anise — product presentation"
+                      }
+                    ].map((photo) => (
+                      <button
+                        key={photo.src}
+                        type="button"
+                        onClick={() => setLightboxImage(photo)}
+                        className="group relative overflow-hidden rounded-xl bg-slate-100 text-left focus:outline-none focus:ring-4 focus:ring-amber-300"
+                        aria-label={language === "FR" ? `Agrandir : ${photo.alt}` : `Enlarge: ${photo.alt}`}
+                      >
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          loading="lazy"
+                          className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
+                        />
+                        <span className="absolute bottom-3 right-3 rounded-full bg-blue-950/85 px-3 py-2 text-xs font-bold text-white">
+                          ⤢ {language === "FR" ? "Agrandir" : "Enlarge"}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Informations générales */}
+                <div className="border-t border-slate-200 px-6 py-9 sm:px-10">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber-600">
+                    {language === "FR" ? "Informations produit" : "Product information"}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-bold text-blue-950">
+                    {language === "FR" ? "À propos de notre anis étoilé" : "About our star anise"}
+                  </h3>
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-xl bg-slate-50 p-5">
+                      <p className="text-sm font-bold text-blue-950">
+                        {language === "FR" ? "Catégorie" : "Category"}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {language === "FR" ? "Épice" : "Spice"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-slate-50 p-5">
+                      <p className="text-sm font-bold text-blue-950">
+                        {language === "FR" ? "Aspect" : "Appearance"}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {language === "FR" ? "Fruits secs en forme d’étoile" : "Dried, star-shaped fruits"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-slate-50 p-5">
+                      <p className="text-sm font-bold text-blue-950">
+                        {language === "FR" ? "Utilisation" : "Uses"}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {language === "FR" ? "Préparations culinaires et boissons" : "Culinary preparations and beverages"}
+                      </p>
+                    </div>
+                    <div className="rounded-xl bg-slate-50 p-5">
+                      <p className="text-sm font-bold text-blue-950">
+                        {language === "FR" ? "Conditionnement et disponibilité" : "Packaging and availability"}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {language === "FR" ? "À confirmer selon la demande" : "To be confirmed according to the enquiry"}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-5 text-xs italic leading-5 text-slate-500">
+                    {language === "FR"
+                      ? "Les spécifications, les volumes disponibles et les conditions de livraison sont à confirmer lors de la demande commerciale."
+                      : "Specifications, available volumes and delivery terms are to be confirmed during the business enquiry."}
                   </p>
                 </div>
               </section>
